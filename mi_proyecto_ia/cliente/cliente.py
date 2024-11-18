@@ -13,7 +13,8 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tess
 
 # Configuración
 config = configparser.ConfigParser()
-config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config.ini'))
+config_path = os.path.join(os.getcwd(), 'config.ini')
+#config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config.ini'))
 config.read(config_path)
 
 # Configuración del cliente

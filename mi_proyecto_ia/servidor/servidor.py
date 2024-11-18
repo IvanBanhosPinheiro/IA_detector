@@ -5,12 +5,15 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Directorio para guardar las capturas de pantalla y alertas recibidas
+#ruta_guardado_capturas = os.path.join(os.path.dirname(__file__), 'screenshots_recibidas')
 ruta_guardado_capturas = os.path.join(os.path.dirname(__file__), 'screenshots_recibidas')
 if not os.path.exists(ruta_guardado_capturas):
     os.makedirs(ruta_guardado_capturas)
 
 # Ruta para el archivo de palabras clave
-ruta_keywords = os.path.abspath(os.path.join(os.path.dirname(__file__), 'keywords.txt'))
+#ruta_keywords = os.path.abspath(os.path.join(os.path.dirname(__file__), 'keywords.txt'))
+ruta_keywords = os.path.join(os.getcwd(), 'keywords.txt')
+
 
 # Endpoint para subir capturas de pantalla y alertas
 @app.route('/uploads', methods=['POST'])
